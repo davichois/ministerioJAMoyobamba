@@ -3,6 +3,8 @@ import { BiLogoFacebookCircle, BiLogoInstagramAlt } from "react-icons/bi";
 import Link from "next/link";
 import AdBanner from "@/components/AdBanner";
 
+export const runtime = "edge";
+
 export default function Home() {
   return (
     <div className="flex flex-col md:flex-row gap-8">
