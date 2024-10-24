@@ -25,12 +25,13 @@ export default function Home() {
           <p className="text-sm font-semibold text-[#2E5797]">2024</p>
         </div>
         <div className="mt-4 space-y-2 text-sm">
-          <div className="font-semibold">Publicidad</div>
+          <div className="font-semibold"></div>
           <AdBanner
             dataAdFormat="auto"
             dataFullWidthResponsive={true}
             dataAdSlot="2421239735"
           />
+          <a href="https://www.buymeacoffee.com/ministerioo"><img src="https://img.buymeacoffee.com/button-api/?text=Donar&emoji=🤝&slug=ministerioo&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
         </div>
       </div>
       <div className="md:w-2/3">
