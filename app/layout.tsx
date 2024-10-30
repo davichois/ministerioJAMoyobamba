@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AdSense from "../components/AdSense";
 import Head from "next/head";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
@@ -14,7 +14,8 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Ministerio J.A.M",
-  description: "Ministerio Joven Adventista es una comunidad dedicada a inspirar y conectar a jóvenes en su camino espiritual. A través de actividades dinámicas, estudio bíblico y servicio, buscamos fortalecer la fe cristiana y promover valores positivos, fomentando el crecimiento personal y el compañerismo entre jóvenes adventistas.",
+  description:
+    "Ministerio Joven Adventista es una comunidad dedicada a inspirar y conectar a jóvenes en su camino espiritual. A través de actividades dinámicas, estudio bíblico y servicio, buscamos fortalecer la fe cristiana y promover valores positivos, fomentando el crecimiento personal y el compañerismo entre jóvenes adventistas.",
 };
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <GoogleTagManager gtmId="GTM-5TGWT9ZQ" />
         <AdSense pId="9079601747335327" />
       </Head>
       <body className={`${lato.className}`}>

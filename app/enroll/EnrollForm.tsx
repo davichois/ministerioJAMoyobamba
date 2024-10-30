@@ -1,6 +1,7 @@
 // app/enroll/EnrollForm.tsx (Client Component)
 "use client";
 
+import { GoogleTagManager, sendGTMEvent } from "@next/third-parties/google";
 import { useState } from "react";
 
 export default function EnrollForm() {
@@ -12,10 +13,10 @@ export default function EnrollForm() {
     e.preventDefault();
 
     // Llama a la función insertEmail mediante la llamada a la API
-    const response = await fetch('/api/insertEmail', {
-      method: 'POST',
+    const response = await fetch("/api/insertEmail", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email }),
     });
@@ -31,11 +32,14 @@ export default function EnrollForm() {
 
   return (
     <div className="flex flex-col justify-center items-center h-full">
+      <GoogleTagManager gtmId="GTM-5TGWT9ZQ" />
       <h1 className="font-semibold text-[#2E5797] text-center">
-        ¡Inscríbete en el Ministerio J.A. Moyobamba y únete a nuestra comunidad de jóvenes adventistas!
+        ¡Inscríbete en el Ministerio J.A. Moyobamba y únete a nuestra comunidad
+        de jóvenes adventistas!
       </h1>
       <p className="font-normal text-sm text-[#a4a4a4] text-center mb-10">
-        Proporciónanos tu correo electrónico para enviarte la lección de la semana directamente.
+        Proporciónanos tu correo electrónico para enviarte la lección de la
+        semana directamente.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <input
@@ -48,6 +52,9 @@ export default function EnrollForm() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
+          onClick={() =>
+            sendGTMEvent({ event: "buttonClicked", value: "enviar_correo" })
+          }
           className="font-semibold border mt-5 p-2 bg-[#2E5797] text-white border-[#2E5797] hover:bg-[#3e6cb4] hover:text-white"
           type="submit"
         >
