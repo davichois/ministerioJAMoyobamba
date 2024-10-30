@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BiLogoFacebookCircle, BiLogoInstagramAlt } from "react-icons/bi";
 import Link from "next/link";
 import AdBanner from "@/components/AdBanner";
+import DonateButtom from "./DonateButtom";
 
 export const runtime = "edge";
 
@@ -31,9 +32,7 @@ export default function Home() {
             dataFullWidthResponsive={true}
             dataAdSlot="2421239735"
           />
-          <a href="https://www.buymeacoffee.com/ministerioo">
-            <img src="https://img.buymeacoffee.com/button-api/?text=Donar&emoji=🤝&slug=ministerioo&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" />
-          </a>
+          <DonateButtom />
         </div>
       </div>
       <div className="md:w-2/3">
